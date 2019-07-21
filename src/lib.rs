@@ -1,61 +1,7 @@
-#[cfg(test)]
-mod tests {
-    use crate::segment_tree::Reducer;
-    use crate::segment_tree::SegmentTree;
-
-    #[test]
-    fn test_update() {}
-
-    #[test]
-    fn test_querying() {
-        // Testing querying functionality
-
-        // Setup
-        let vec = [2.5, 3.25, 7.0, 1.75, 9.35, 0.90];
-
-        impl Reducer for f32 {
-            fn reduce(&self, other: f32) -> f32 {
-                self + other
-            }
-        }
-
-        let tree = SegmentTree::<f32>::build(&vec);
-
-        // Run
-        let result = tree.query(0, 5).unwrap(); // inclusive, indexing = 0, 1, ..., n-1
-
-        // Check
-        assert_eq!(result, 24.75);
-    }
-
-    #[test]
-    fn test_building_tree() {
-        // Testing the storage and storage size with i32 values
-
-        // Setup
-        let vec = [2, 3, 7, 1, 9, 0];
-        let valid_storage = [22, 12, 10, 5, 7, 10, 0, 2, 3, 0, 0, 1, 9, 0, 0];
-
-        impl Reducer for i32 {
-            fn reduce(&self, other: i32) -> i32 {
-                self + other
-            }
-        }
-
-        // Run
-        let tree = SegmentTree::<i32>::build(&vec);
-        let tree_storage = tree.storage();
-
-        // Check
-        let mut status = tree_storage.len() == valid_storage.len();
-
-        for (i, &elem) in valid_storage.iter().enumerate() {
-            status &= elem == tree_storage[i];
-        }
-
-        assert!(status, "Failed to build a tree correctly");
-    }
-}
+/**
+ * Author: Batyr N. <oneturkmen@gmail.com>
+ * Date: July, 2019
+ **/
 
 // TODO
 // 1) Implement simple segment tree:
