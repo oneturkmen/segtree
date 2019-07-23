@@ -1,6 +1,6 @@
 
-use segtree::segment_tree::Reducer;
-use segtree::segment_tree::SegmentTree;
+use segtree::Reducer;
+use segtree::SegmentTree;
 
 #[test]
 fn test_update() {}

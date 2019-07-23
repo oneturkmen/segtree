@@ -1,7 +1,7 @@
 use std::convert::From;
 
-use segtree::segment_tree::SegmentTree;
-use segtree::segment_tree::Reducer;
+use segtree::SegmentTree;
+use segtree::Reducer;
 
 #[derive(Debug, Default, Clone)]
 struct Sum(f32);
