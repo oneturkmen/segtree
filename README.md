@@ -1,7 +1,5 @@
 # Segtree
 
-![Travis CI](https://travis-ci.com/oneturkmen/segtree.svg?token=JXso6nSnVYL7EMdGYtKK&branch=master)
+[![Build Status](https://travis-ci.org/oneturkmen/segtree.svg?branch=master)](https://travis-ci.org/oneturkmen/segtree)
 
-Generic segment tree implementation in Rust.
-
-
+Simple, yet generic segment tree implementation in Rust.
